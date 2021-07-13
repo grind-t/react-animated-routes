@@ -1,1 +1,94 @@
-<mxfile host="app.diagrams.net" modified="2021-07-13T10:41:30.930Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" version="14.8.6" etag="O4zzvOuuJwv1RY0yI-g_" type="github"><diagram id="KEdrA1tcHvxkfwVo1s6t">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-07-13T14:30:17.409Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" etag="vqlbqjxb_oVQ1Srwn64i" version="14.8.6" type="github">
+  <diagram id="KEdrA1tcHvxkfwVo1s6t" name="Page-1">
+    <mxGraphModel dx="1303" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-3" value="&lt;b&gt;Router&lt;/b&gt;" style="html=1;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="80" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-4" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="_89IygYIYl0VfLdhJQ_7-3">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="_89IygYIYl0VfLdhJQ_7-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="350" as="sourcePoint" />
+            <mxPoint x="350" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-7" value="&lt;p style=&quot;margin: 0px ; margin-top: 6px ; text-align: center&quot;&gt;&lt;b&gt;AnimatedRoute&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;+ classNames: string&lt;br&gt;+ duration: number&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 8px&quot;&gt;+ ...rest (пропсы стандартного Route)&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="205" y="400" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-8" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="_89IygYIYl0VfLdhJQ_7-7">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-24" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-9" value="v0.1.0" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="310" y="10" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-17" value="&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;LastLocationProvider&lt;/b&gt;&lt;/font&gt;" style="html=1;dropTarget=0;fontSize=16;align=center;" vertex="1" parent="1">
+          <mxGeometry x="260" y="240" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-18" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="_89IygYIYl0VfLdhJQ_7-17">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-19" value="" style="endArrow=classic;html=1;fontSize=16;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_89IygYIYl0VfLdhJQ_7-17" target="_89IygYIYl0VfLdhJQ_7-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-21" value="Стандартный роутер из пакета react-router-dom" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;labelBorderColor=none;strokeWidth=1;strokeColor=#000000;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="480" y="80" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-22" value="" style="endArrow=none;html=1;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="_89IygYIYl0VfLdhJQ_7-3" target="_89IygYIYl0VfLdhJQ_7-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="220" as="sourcePoint" />
+            <mxPoint x="440" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-23" value="Провайдер предыдущего роута из пакета&amp;nbsp;react-router-last-location" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;strokeColor=#000000;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="480" y="240" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-24" value="" style="endArrow=none;html=1;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="_89IygYIYl0VfLdhJQ_7-17" target="_89IygYIYl0VfLdhJQ_7-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="360" as="sourcePoint" />
+            <mxPoint x="440" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-25" value="Кастомный компонент, для анимации переходов между страницами" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="560" y="400" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-26" value="" style="endArrow=none;html=1;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="_89IygYIYl0VfLdhJQ_7-7" target="_89IygYIYl0VfLdhJQ_7-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="400" as="sourcePoint" />
+            <mxPoint x="470" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-29" value="&lt;b&gt;Анимация переходов в стиле React Transition Group&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: justify&quot;&gt;Легковесный вариант, в котором используется css переходы и классы жизненного цикла перехода.&lt;/div&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;strokeColor=#000000;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="560" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-31" value="&lt;b&gt;Анимация переходов в стиле Framer Motion или react-spring&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: justify&quot;&gt;Более тяжеловесные варианты, в которых анимации переходов описываются прямо в JS.&lt;/div&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;strokeColor=#000000;spacing=10;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="827" y="390" width="210" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-32" value="" style="endArrow=none;html=1;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="_89IygYIYl0VfLdhJQ_7-25" target="_89IygYIYl0VfLdhJQ_7-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="740" y="540" as="sourcePoint" />
+            <mxPoint x="790" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_89IygYIYl0VfLdhJQ_7-34" value="" style="endArrow=none;html=1;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="_89IygYIYl0VfLdhJQ_7-29" target="_89IygYIYl0VfLdhJQ_7-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="600" as="sourcePoint" />
+            <mxPoint x="680" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
