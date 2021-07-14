@@ -19,8 +19,16 @@
     "url": "https://github.com/grind-t/react-animated-routes/issues"
   },
   "homepage": "https://github.com/grind-t/react-animated-routes#readme",
+  "peerDependencies": {
+    "react": "^16.8.0  || ^17.0.0",
+    "react-dom": "^16.8.0  || ^17.0.0"
+  },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
     "@types/jest": "^26.0.24",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "eslint": "^7.30.0",
@@ -28,6 +36,8 @@
     "eslint-plugin-jest": "^24.3.6",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.5"
   }
