@@ -8,6 +8,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:jest/recommended",
     "plugin:jest/style",
     "prettier"
@@ -17,5 +19,10 @@
     "ecmaVersion": 12
   },
   "plugins": ["@typescript-eslint", "jest"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {}
 }
