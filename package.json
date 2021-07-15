@@ -25,7 +25,8 @@
   "homepage": "https://github.com/grind-t/react-animated-routes#readme",
   "peerDependencies": {
     "react": "^16.8.0  || ^17.0.0",
-    "react-dom": "^16.8.0  || ^17.0.0"
+    "react-dom": "^16.8.0  || ^17.0.0",
+    "react-router-dom": "^5.1.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -44,6 +45,7 @@
     "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.5"
   }
