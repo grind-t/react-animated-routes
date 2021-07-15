@@ -54,7 +54,6 @@
   },
   "dependencies": {
     "@types/react-transition-group": "^4.4.2",
-    "react-transition-group": "^4.4.2",
-    "react-use": "^17.2.4"
+    "react-transition-group": "^4.4.2"
   }
 }
