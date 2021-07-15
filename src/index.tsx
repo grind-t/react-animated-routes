@@ -40,6 +40,7 @@ const AnimatedRoute = ({
       in={currentMatch !== null}
       classNames={classNames}
       timeout={timeout}
+      appear={true}
       unmountOnExit
     >
       {children}
