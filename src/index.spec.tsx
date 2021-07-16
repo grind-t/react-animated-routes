@@ -13,10 +13,10 @@ describe('sample desc', () => {
           <Link to="/a">Link a</Link>
           <Link to="/b">Link b</Link>
 
-          <AnimatedRoute classNames="fade" timeout={1000} path="/a">
+          <AnimatedRoute classNames="fade" duration={1000} path="/a">
             <span>a</span>
           </AnimatedRoute>
-          <AnimatedRoute classNames="fade" timeout={1000} path="/b">
+          <AnimatedRoute classNames="fade" duration={1000} path="/b">
             <span>b</span>
           </AnimatedRoute>
         </LastLocationProvider>

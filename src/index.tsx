@@ -1,75 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation, matchPath, RouteProps } from 'react-router-dom';
-import { useLastLocation } from 'react-router-last-location';
-import { useTimeoutFn, useTimeout } from 'react-use';
+import React from 'react';
+import { useRouteMatch, RouteProps } from 'react-router-dom';
+import usePreviousRouteMatch from './hooks/usePreviousRouteMatch';
+import CSSTransition, { CSSTransitionProps } from './components/CSSTransition';
 
-interface CSSTransition {
-  classNames?: string;
-  timeout?: number;
-  children?: React.ReactNode;
-}
-
-function mergeClassName(children: React.ReactNode, className: string) {
-  return React.Children.map(children, (child) => {
-    if (!React.isValidElement(child)) return child;
-    const childClassName = child.props.className;
-    const mergedClassName = childClassName
-      ? `${childClassName} ${className}`
-      : className;
-    return React.cloneElement(child, { className: mergedClassName });
-  });
-}
-
-const EnterTransition = ({ classNames, timeout, children }: CSSTransition) => {
-  const [phase, setPhase] = useState('enter');
-
-  useEffect(() => setPhase('enter active'), []);
-  useTimeoutFn(() => setPhase('done'), timeout);
-
-  const className = classNames ? `${classNames} ${phase}` : phase;
-
-  return <>{mergeClassName(children, className)}</>;
-};
-
-const LeaveTransition = ({ classNames, timeout, children }: CSSTransition) => {
-  const [phase, setPhase] = useState('exit');
-  const [isReady] = useTimeout(timeout);
-
-  useEffect(() => setPhase('exit active'), []);
-
-  if (isReady()) return null;
-
-  const className = classNames ? `${classNames} ${phase}` : phase;
-
-  return <>{mergeClassName(children, className)}</>;
-};
-
-type AnimatedRouteProps = Omit<RouteProps, 'children'> & CSSTransition;
+type AnimatedRouteProps = Omit<RouteProps, 'children'> &
+  Omit<CSSTransitionProps, 'leave'>;
 
 const AnimatedRoute = ({
   classNames,
-  timeout,
+  duration,
   children,
   ...rest
 }: AnimatedRouteProps): JSX.Element | null => {
-  const currentLocation = useLocation();
-  const lastLocaction = useLastLocation();
-  const currentMatch = matchPath(currentLocation.pathname, { ...rest });
-  if (currentMatch)
-    return (
-      <EnterTransition classNames={classNames} timeout={timeout}>
-        {children}
-      </EnterTransition>
-    );
-  if (!lastLocaction) return null;
-  const lastMatch = matchPath(lastLocaction.pathname, { ...rest });
-  if (lastMatch)
-    return (
-      <LeaveTransition classNames={classNames} timeout={timeout}>
-        {children}
-      </LeaveTransition>
-    );
-  return null;
+  const currMatch = useRouteMatch({ ...rest });
+  const prevMatch = usePreviousRouteMatch({ ...rest });
+  if (!currMatch && !prevMatch) return null;
+  return (
+    <CSSTransition
+      entering={currMatch !== null}
+      classNames={classNames}
+      duration={duration}
+    >
+      {children}
+    </CSSTransition>
+  );
 };
 
 export default AnimatedRoute;
