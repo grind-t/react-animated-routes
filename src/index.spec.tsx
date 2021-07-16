@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import AnimatedRoute from './index';
 import { BrowserRouter, Link } from 'react-router-dom';
@@ -28,8 +28,9 @@ describe('sample desc', () => {
     fireEvent.click(screen.getByText('Link b'));
     screen.debug();
     expect(screen.getByText('b')).toBeInTheDocument();
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await waitFor(() => {
+      expect(screen.queryByText('a')).not.toBeInTheDocument();
+    });
     screen.debug();
-    expect(screen.queryByText('a')).not.toBeInTheDocument();
   });
 });
