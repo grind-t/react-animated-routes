@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useTimeout } from 'react-use';
+import React, { useEffect } from 'react';
+import { useTimeoutFn } from 'react-use';
+import { Phase, useCSSTransition } from '../hooks/useCSSTransition';
 
 interface CSSTransitionProps {
   entering?: boolean;
@@ -25,24 +26,16 @@ const CSSTransition = ({
   duration,
   children,
 }: CSSTransitionProps): JSX.Element | null => {
-  const [isEntering, setIsEntering] = useState(entering);
-  const [isReady, , reset] = useTimeout(duration);
+  const [phase, classes, done] = useCSSTransition(entering);
+  const [, , reset] = useTimeoutFn(done, duration);
 
   useEffect(() => {
-    reset();
-    setIsEntering(entering);
-  }, [entering, reset]);
+    if (phase === Phase.Start) reset();
+  }, [phase, reset]);
 
-  if (!isEntering && isReady()) return null;
+  if (!entering && phase === Phase.End) return null;
 
-  const transitionClasses = isEntering
-    ? isReady()
-      ? 'entered'
-      : 'enter entering'
-    : 'leave leaving';
-  const className = classNames
-    ? `${classNames} ${transitionClasses}`
-    : transitionClasses;
+  const className = classNames ? `${classNames} ${classes}` : classes;
 
   return <>{mergeClassName(children, className)}</>;
 };
