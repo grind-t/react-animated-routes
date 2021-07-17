@@ -1,26 +1,27 @@
 import React from 'react';
 import { useRouteMatch, RouteProps } from 'react-router-dom';
-import usePreviousRouteMatch from './hooks/usePreviousRouteMatch';
-import CSSTransition, { CSSTransitionProps } from './components/CSSTransition';
+import { CSSTransition } from 'react-transition-group';
+import { CSSTransitionProps } from 'react-transition-group/CSSTransition';
 
-type AnimatedRouteProps = Omit<RouteProps, 'children'> &
-  Omit<CSSTransitionProps, 'leave'>;
+type AnimatedRouteProps = Pick<
+  RouteProps,
+  'location' | 'path' | 'exact' | 'sensitive' | 'strict'
+> &
+  CSSTransitionProps;
 
 const AnimatedRoute = ({
-  classNames,
-  duration,
+  location,
+  path,
+  exact,
+  sensitive,
+  strict,
   children,
   ...rest
-}: AnimatedRouteProps): JSX.Element | null => {
-  const currMatch = useRouteMatch({ ...rest });
-  const prevMatch = usePreviousRouteMatch({ ...rest });
-  if (!currMatch && !prevMatch) return null;
+}: AnimatedRouteProps): JSX.Element => {
+  const match = useRouteMatch({ location, path, exact, sensitive, strict });
+
   return (
-    <CSSTransition
-      entering={currMatch !== null}
-      classNames={classNames}
-      duration={duration}
-    >
+    <CSSTransition in={match !== null} mountOnEnter unmountOnExit {...rest}>
       {children}
     </CSSTransition>
   );
