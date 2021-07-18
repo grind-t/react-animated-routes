@@ -28,7 +28,7 @@ describe('sample desc', () => {
             <span>b</span>
           </AnimatedRoute>
           <AnimatedRoute classNames="fade" timeout={1000} path="/с">
-            <span>с</span>
+            <span>c</span>
           </AnimatedRoute>
         </LastLocationProvider>
       </BrowserRouter>
